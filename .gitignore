@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+runs/
+*.zip
+bank/
+bank_full/
+data/images/
+data/labels/
+data/labels14/
+data/images.csv

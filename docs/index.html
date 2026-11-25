@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GRAFT Project Page</title>
+<meta name="description" content="GRAFT pastes SAM 2.1 cut-outs of archive animals into cruise training frames with the lighting of the seafloor around them, for the detection of deep-sea benthic megafauna across dives, sites, cameras, cruises and vehicles.">
+<style>
+:root{--bg:#fbfbfa;--fg:#1c2430;--mut:#5b6675;--card:#fff;--line:#dfe3e8;--acc:#0b6e99;--acc2:#e8f3f8;--warn:#fff4d6;--warnl:#e6c767}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151b;--fg:#e6eaef;--mut:#9aa6b4;--card:#171e26;--line:#2a3441;--acc:#6cc4ea;--acc2:#12303d;--warn:#3a3118;--warnl:#7a6525}}
+:root[data-theme="dark"]{--bg:#10151b;--fg:#e6eaef;--mut:#9aa6b4;--card:#171e26;--line:#2a3441;--acc:#6cc4ea;--acc2:#12303d;--warn:#3a3118;--warnl:#7a6525}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:0 0 12px}
+.authors{color:var(--mut);margin:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btns a{padding:8px 14px;border:1px solid var(--acc);color:var(--acc);border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btns a:hover{background:var(--acc2)}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:10px 16px;white-space:nowrap}
+nav a{color:var(--mut);text-decoration:none;font-size:.92rem}
+nav a:hover{color:var(--acc)}
+section{padding:34px 0 6px}
+h2{font-size:1.4rem;margin:0 0 12px}
+h3{font-size:1.05rem;margin:22px 0 6px}
+figure{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+figure img{max-width:100%;height:auto;display:block;margin:0 auto}
+figcaption{color:var(--mut);font-size:.9rem;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.stat b{display:block;font-size:1.7rem;color:var(--acc)}
+.stat span{color:var(--mut);font-size:.9rem}
+table{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--line);font-size:.93rem}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--acc2)}
+tr.ours td{font-weight:700}
+td.l,th.l{text-align:left}
+.tblwrap{overflow-x:auto;margin:12px 0}
+.note{background:var(--warn);border:1px solid var(--warnl);border-radius:10px;padding:12px 14px;margin:16px 0}
+.eq{text-align:center;font-size:1.08rem;margin:14px 0;overflow-x:auto;white-space:nowrap}
+.eq .n{color:var(--mut);margin-left:18px}
+.ss{display:inline-flex;flex-direction:column;vertical-align:middle;font-size:.68em;line-height:1.05;margin-left:1px}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 3px}
+.fr>span:first-child{border-bottom:1px solid currentColor;padding:0 3px 2px}
+.fr>span:last-child{padding:2px 3px 0}
+code,pre{font-family:ui-monospace,Consolas,monospace;font-size:.88rem}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+footer{padding:30px 0 50px;color:var(--mut);font-size:.9rem;border-top:1px solid var(--line);margin-top:34px}
+.theme{float:right;background:none;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:4px 10px;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<button class="theme" id="theme" aria-label="Toggle theme">Theme</button>
+<h1>GRAFT: Detection of Deep-Sea Benthic Megafauna Across Cruises Using Radiometry-Aware Transplantation of Archive Animals</h1>
+<p class="authors">Jiaqing Wang, Ruixuan Hu, Jie Qin, Hexiong Zhou*, Zheng Zeng*</p>
+<p class="authors">State Key Laboratory of Submarine Geoscience; Key Laboratory of Polar Ecosystem and Climate Change, Ministry of Education; and School of Oceanography, Shanghai Jiao Tong University &middot; *Corresponding authors</p>
+<div class="btns">
+<a href="https://github.com/panzerjagerWang/GRAFT">Code</a>
+<a href="supplementary.pdf">Supplement</a>
+<a href="https://github.com/panzerjagerWang/GRAFT/blob/main/weights/graft_yolo26n_seed0.pt">Weights</a>
+<a href="#repro">Reproduce</a>
+<a href="#citation">BibTeX</a>
+</div>
+</div></header>
+
+<nav><div class="wrap">
+<a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#data">Data</a><a href="#limits">Limitations</a><a href="#repro">Reproduce</a><a href="#citation">Citation</a>
+</div></nav>
+
+<main class="wrap">
+
+<section id="overview">
+<h2>Abstract</h2>
+<p>Seafloor video from remotely operated and human-occupied vehicles records benthic megafauna for deep-sea biodiversity surveys. Object detectors trained on some dives can lose much of their accuracy on new dives, sites, cameras, cruises, and vehicles. The rare taxa also provide few annotated animals. Image archives hold many close-ups of these taxa, although animals pasted from them keep the lighting of their source frames. We introduce Generalized Radiometry-Aware Fauna Transplantation, which inserts real archive animals into cruise training frames with the lighting of the seafloor at their new position. The method cuts archive animals with Segment Anything 2.1 and draws them by the scarcity of their taxon. Each pasted animal is then mapped to the intensity range of the seafloor around it. The detector keeps the size and speed of YOLO26n. Five test sets from three cruises add a new dive, site, camera, cruise, or vehicle. Over ten seeds, the pooled mean average precision at an intersection over union of 0.5 rose from 14.5% with the default augmentation to 20.0%, versus 16.7% for plain copy-paste. With a quarter of the cruise training frames, the method reached 17.8%, above the default augmentation with all frames. It raised the score of four other one-stage detectors by 4.0 to 6.0 points. On the lowest-contrast quarter of the test frames, it reached 25.9%, compared with at most 19.1% for the other augmentations. Relit archive animals can thus extend the training data of compact detectors for deep-sea surveys across cruises.</p>
+<div class="grid">
+<div class="stat"><b>20.0%</b><span>pooled test mAP50 of YOLO26n with GRAFT over 10 seeds, against 14.5% with the default augmentation and 16.7% with plain copy-paste</span></div>
+<div class="stat"><b>17.8%</b><span>with 25% of the cruise training frames, above the 14.4% of the default augmentation with all frames over the same five seeds</span></div>
+<div class="stat"><b>+4.0 to +6.0</b><span>mAP50 points for four other one-stage detectors, YOLO26s, YOLO11n, YOLOv8n and YOLOv10n</span></div>
+<div class="stat"><b>25.9%</b><span>mAP50 on the lowest-contrast quarter of the test frames, against at most 19.1% for the other augmentations</span></div>
+<div class="stat"><b>5797</b><span>animals in the instance bank, cut with SAM 2.1, of which 4975 come from the J-EDI archive</span></div>
+<div class="stat"><b>YOLO26n</b><span>detector and inference unchanged; GRAFT acts only on the training frames</span></div>
+</div>
+<figure><img src="img/fig1_concept.png" alt="Detection of deep-sea benthic megafauna across cruises" loading="lazy"><figcaption>Fig. 1. Detection of deep-sea benthic megafauna across cruises. (a) Training sources: a cruise training frame and an archive close-up of an anemone. (b) Problems. P1: the five test sets, each adding one source of shift to the training dives, with the mAP50 of the default augmentation on each. P2: boxes of the rare taxa in the cruise training dives and in the archive training set on a logarithmic scale. P3: an archive crustacean in its source frame and pasted into a cruise frame with the lighting of that source frame. (c) Output of GRAFT. Top: the anemone of (a) relit and pasted into a cruise training frame. Middle: on a held-out dive, YOLO26n trained with GRAFT finds an anemone that the default training misses at a score of 0.25. Bottom: pooled test mAP50 over 10 seeds.</figcaption></figure>
+</section>
+
+<section id="method">
+<h2>Method</h2>
+<p>GRAFT acts on one cruise training frame at a time before mosaic and leaves the detector and its inference unchanged.</p>
+<h3>Instance bank</h3>
+<p>Every annotated animal of the archive training set and of the cruise training dives is cut with SAM 2.1, prompted with its box on the full-resolution frame. An instance enters the bank when the bounding box of its mask overlaps the annotated box with an intersection over union of at least 0.6, its largest connected part holds at least 70% of the mask, the mask covers at least 8% of the box, and the box does not touch the frame border and is at least 8 pixels on each side at the training scale. The bank holds 5797 instances, of which 4975 come from the archive and 822 from the cruise frames.</p>
+<h3>Scarcity sampling</h3>
+<p>For each pasted animal GRAFT draws a taxon <i>k</i> with probability</p>
+<p class="eq"><i>p</i><sub><i>k</i></sub> = <span class="fr"><span>(<i>n</i><sub><i>k</i></sub> + 1)<sup>&minus;&alpha;</sup></span><span>&sum;<sub><i>j</i></sub> (<i>n</i><sub><i>j</i></sub> + 1)<sup>&minus;&alpha;</sup></span></span><span class="n">(3)</span></p>
+<p>where <i>n</i><sub><i>k</i></sub> is the number of boxes of taxon <i>k</i> in the cruise training frames and &alpha; = 0.5, and then draws one bank instance of that taxon uniformly. The rarest cruise taxon receives 9.4 times as many pastes as the most common one.</p>
+<h3>Placement and composition</h3>
+<p>A cruise training frame receives pastes with probability 0.6, including the 1164 of the 1785 cruise training frames that contain no annotated animal. The number of animals is one plus a Poisson draw with mean one, capped at five. Each animal is placed at a uniform position with its annotated box height times a factor drawn uniformly from 0.5 to 1.5. A position is rejected when the box leaves the frame or overlaps an existing box by more than 30% of either box, and up to 30 positions are tried. The cut-out is composed with its mask, feathered by a Gaussian of 0.8 pixels.</p>
+<h3>Radiometric matching</h3>
+<p>Each channel of the cut-out is normalized with the 5th and 95th percentiles <i>q</i><span class="ss"><span><i>i</i></span><span><i>c</i>,5</span></span> and <i>q</i><span class="ss"><span><i>i</i></span><span><i>c</i>,95</span></span> of the animal pixels and scaled to the 5th and 95th percentiles <i>q</i><span class="ss"><span><i>t</i></span><span><i>c</i>,5</span></span> and <i>q</i><span class="ss"><span><i>t</i></span><span><i>c</i>,95</span></span> of the target pixels in a ring around the pasted mask:</p>
+<p class="eq"><i>&Icirc;</i><sub><i>c</i></sub> = &lambda; ( <i>q</i><span class="ss"><span><i>t</i></span><span><i>c</i>,5</span></span> + (<i>q</i><span class="ss"><span><i>t</i></span><span><i>c</i>,95</span></span> &minus; <i>q</i><span class="ss"><span><i>t</i></span><span><i>c</i>,5</span></span>) <span class="fr"><span><i>I</i><sub><i>c</i></sub> &minus; <i>q</i><span class="ss"><span><i>i</i></span><span><i>c</i>,5</span></span></span><span><i>q</i><span class="ss"><span><i>i</i></span><span><i>c</i>,95</span></span> &minus; <i>q</i><span class="ss"><span><i>i</i></span><span><i>c</i>,5</span></span></span></span> ) + (1 &minus; &lambda;) <i>I</i><sub><i>c</i></sub><span class="n">(4)</span></p>
+<p>The strength &lambda; is drawn uniformly from 0.5 to 1, the ring is as wide as 15% of the shorter side of the patch, and an instance range below four grey levels is raised to four. The animal thus keeps its internal pattern of light and dark parts and takes the contrast and the colour cast of its new position. The mapping uses only the observed intensities around the paste location, so it needs neither a depth map nor calibrated lamps.</p>
+<figure><img src="img/fig3_method.png" alt="GRAFT on one cruise training frame" loading="lazy"><figcaption>Fig. 3. GRAFT on one cruise training frame. (a) The archive frame of the anemone enlarged in (d) with its annotated box. Below it are four cut-outs of the instance bank, of which the first three are pasted in (c). (b) Probability <i>p</i><sub><i>k</i></sub> of each taxon by Eq. (3) with the number <i>n</i><sub><i>k</i></sub> of its boxes in the cruise training frames. Gold bars mark the rare taxa. (c) The augmented frame with the three pasted boxes and the square enlarged in (d). (d) The anemone of (a) in the dotted square of (c) pasted without and with the relighting of Eq. (4). (e) The augmented frame enters the default mosaic augmentation and the training of YOLO26n.</figcaption></figure>
+<figure><img src="img/fig4_relighting.png" alt="Relighting of archive animals" loading="lazy" style="max-width:560px;width:100%"><figcaption>Fig. 4. Archive animals of five taxa pasted at the same position of cruise training frames. Columns: the animal in its archive frame, plain paste, a per-channel affine map of the background percentiles, a transfer of the colour cast, and the local-range mapping of GRAFT by Eq. (4). All mappings use the mean training strength &lambda; = 0.75. Each crop is the frame region around the paste, enlarged three times.</figcaption></figure>
+</section>
+
+<section id="results">
+<h2>Results</h2>
+<p>Test results of YOLO26n on the pooled test frames T1&ndash;T5 (1904 frames), mean and standard deviation over 10 seeds. mAP50 and mAP50-95 average the seven main taxa with at least 20 test boxes; the rare group pools the five other named taxa into one precision-recall curve.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Method</th><th>mAP50</th><th>mAP50-95</th><th>Rare-group AP50</th><th>FP per empty frame</th></tr></thead>
+<tbody>
+<tr><td>Default</td><td>14.5 &plusmn; 1.9</td><td>7.2 &plusmn; 1.0</td><td>9.7 &plusmn; 3.2</td><td><b>0.14 &plusmn; 0.01</b></td></tr>
+<tr><td>RFS + paste</td><td>16.4 &plusmn; 1.2</td><td>8.4 &plusmn; 0.8</td><td>4.2 &plusmn; 1.9</td><td>0.26 &plusmn; 0.04</td></tr>
+<tr><td>Collage</td><td>16.3 &plusmn; 2.1</td><td>8.3 &plusmn; 1.3</td><td><b>13.2 &plusmn; 4.1</b></td><td>0.20 &plusmn; 0.02</td></tr>
+<tr><td>Copy-paste</td><td>16.7 &plusmn; 2.1</td><td>8.4 &plusmn; 1.2</td><td>4.7 &plusmn; 2.2</td><td>0.25 &plusmn; 0.03</td></tr>
+<tr><td><b>GRAFT</b></td><td><b>20.0 &plusmn; 2.0</b></td><td><b>10.2 &plusmn; 1.1</b></td><td>7.2 &plusmn; 3.7</td><td>0.28 &plusmn; 0.04</td></tr>
+</tbody></table></div>
+<p>GRAFT raised the pooled test mAP50 of YOLO26n from 14.5 with the default augmentation to 20.0. Plain copy-paste had the highest mean score of the existing augmentations with 16.7. The planned comparisons of GRAFT with the default augmentation and with plain copy-paste were both significant at the 0.05 level after Holm correction. On the rare group GRAFT scored 7.2 points against 13.2 for the context collage and 9.7 for the default augmentation, and it produced the most false positives on empty test frames, 0.28 per frame against 0.14 for the default augmentation. GRAFT scored highest on T1, T2 and T5; on the new dives of T1 it exceeded the best other method by 4.0 points and on the new vehicle of T5 by 3.1 points. On the auxiliary camera of T3 it scored 25.3 against 25.4 for plain copy-paste, and no method exceeded 6.1 points on cruise B of T4. On the quarter of the test frames with the lowest contrast GRAFT reached 25.9 against at most 19.1 for the other augmentations. In the cross-validation over the training dives, removing the relighting, the pasting into empty frames or the scarcity sampling lowered the score of GRAFT by 5.0, 4.0 and 3.8 points.</p>
+<figure><img src="img/fig5_results.png" alt="Test results of YOLO26n" loading="lazy" style="max-width:620px;width:100%"><figcaption>Fig. 5. Test results of YOLO26n with 10 seeds per method. (a) Pooled test mAP50 with one dot per seed and the mean as a bar. (b) mAP50 on each test set with the standard deviation over seeds. (c) Rare-group AP50 with one dot per seed. (d) False positives per empty test frame against the pooled test mAP50, as means over seeds. RFS denotes repeat-factor sampling.</figcaption></figure>
+
+<h3>Label budget</h3>
+<p>With 25% of the cruise training frames GRAFT reached 17.8 points, above the 14.4 points of the default augmentation with all cruise training frames over the same five seeds. Pooled test results of YOLO26n over five seeds:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Cruise frames</th><th>mAP50, Default</th><th>mAP50, GRAFT</th><th>Rare-group AP50, Default</th><th>Rare-group AP50, GRAFT</th></tr></thead>
+<tbody>
+<tr><td>10% (177)</td><td>8.2 &plusmn; 1.0</td><td>12.6 &plusmn; 1.8</td><td>3.9 &plusmn; 1.3</td><td>4.8 &plusmn; 1.8</td></tr>
+<tr><td>25% (446)</td><td>11.4 &plusmn; 2.0</td><td>17.8 &plusmn; 1.4</td><td>6.5 &plusmn; 2.5</td><td>6.1 &plusmn; 1.5</td></tr>
+<tr><td>50% (892)</td><td>13.7 &plusmn; 1.5</td><td>18.5 &plusmn; 1.6</td><td>8.2 &plusmn; 3.0</td><td>8.2 &plusmn; 3.2</td></tr>
+<tr><td>100% (1785)</td><td>14.4 &plusmn; 1.9</td><td>20.1 &plusmn; 2.2</td><td>10.0 &plusmn; 2.3</td><td>7.5 &plusmn; 2.5</td></tr>
+</tbody></table></div>
+
+<h3>Other detectors</h3>
+<p>GRAFT raised the pooled test mAP50 of the four other detectors by 4.0 points with YOLOv8n to 6.0 points with YOLOv10n. Pooled test results over three seeds:</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Detector</th><th>mAP50, Default</th><th>mAP50, GRAFT</th><th>Rare-group AP50, Default</th><th>Rare-group AP50, GRAFT</th></tr></thead>
+<tbody>
+<tr><td>YOLO26n</td><td>14.9 &plusmn; 2.5</td><td>21.0 &plusmn; 0.7</td><td>8.4 &plusmn; 0.6</td><td>6.0 &plusmn; 1.7</td></tr>
+<tr><td>YOLO26s</td><td>13.9 &plusmn; 0.2</td><td>19.3 &plusmn; 1.2</td><td>5.3 &plusmn; 2.1</td><td>7.4 &plusmn; 1.9</td></tr>
+<tr><td>YOLO11n</td><td>15.0 &plusmn; 1.2</td><td>19.5 &plusmn; 1.5</td><td>6.5 &plusmn; 2.0</td><td>4.8 &plusmn; 1.7</td></tr>
+<tr><td>YOLOv8n</td><td>14.9 &plusmn; 1.6</td><td>18.9 &plusmn; 0.5</td><td>6.7 &plusmn; 2.9</td><td>4.5 &plusmn; 2.5</td></tr>
+<tr><td>YOLOv10n</td><td>14.0 &plusmn; 0.4</td><td>20.0 &plusmn; 0.5</td><td>6.0 &plusmn; 0.3</td><td>3.9 &plusmn; 1.8</td></tr>
+</tbody></table></div>
+<p>The per-seed scores behind these tables are in <a href="https://github.com/panzerjagerWang/GRAFT/tree/main/results">results/</a>: <code>test_boot0.csv</code> (five methods, 10 seeds), <code>e4_boot0.csv</code> (label budget, five seeds) and <code>e5_boot0.csv</code> (other detectors, three seeds), with the scores on each test set and the AP50 of each taxon.</p>
+</section>
+
+<section id="data">
+<h2>Data</h2>
+<p><b>Cruise frames.</b> 3689 frames from the video of three cruises to seamounts and abyssal plains of the western Pacific Ocean, with 2493 annotated animals. The animals are labelled with 12 named taxa and an other-animal class, the 13 taxa of the detector, or as animals of unknown taxon, which are ignore regions in evaluation. Cruise A comprises 12 dives of a work-class ROV (ROV-1) at four seamount sites at depths of about 600 to 3700 m. Cruise B comprises one dive of the same vehicle at about 2700 m on another seamount, recorded by one high-definition and six standard-definition cameras. Cruise C comprises two dives of an HOV (HOV-1), recorded by its pan-tilt and manipulator cameras. The frames were sampled from the video every 6 s and de-duplicated by perceptual hashing. The eight training dives of Cruise A come from three seamount sites, and each test set adds one source of shift.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Set</th><th class="l">Frames from</th><th class="l">New with respect to training</th><th>Frames</th></tr></thead>
+<tbody>
+<tr><td>Training</td><td class="l">Cruise A, eight dives at three sites, main camera</td><td class="l"></td><td>1785</td></tr>
+<tr><td>T1</td><td class="l">Cruise A, one held-out dive at each of the three sites, main camera</td><td class="l">dive</td><td>523</td></tr>
+<tr><td>T2</td><td class="l">Cruise A, the dive at a fourth site, main camera</td><td class="l">site</td><td>349</td></tr>
+<tr><td>T3</td><td class="l">Cruise A, T1 dives, auxiliary camera</td><td class="l">camera</td><td>223</td></tr>
+<tr><td>T4</td><td class="l">Cruise B, high-definition and standard-definition cameras</td><td class="l">cruise, cameras</td><td>406</td></tr>
+<tr><td>T5</td><td class="l">Cruise C, pan-tilt and manipulator cameras</td><td class="l">vehicle, cruise</td><td>403</td></tr>
+</tbody></table></div>
+<p><b>Archive set.</b> Close-up frames from the JAMSTEC E-library of Deep-sea Images (<a href="https://www.godac.jamstec.go.jp/jedi/">J-EDI</a>), whose classes are mapped onto the same taxa (supplementary material, Section S1). The use of J-EDI images is subject to the J-EDI terms of use.</p>
+<p><b>Availability.</b> The cruise frames and their annotations are available from the corresponding authors on reasonable request. The repository holds the split lists (training dives, cross-validation folds, label-budget subsets, test sets T1&ndash;T5, imaging-condition subsets and the archive splits) as frame names, and the main and rare taxa of the evaluation.</p>
+</section>
+
+<section id="limits">
+<h2>Limitations</h2>
+<ul>
+<li>One annotator labelled the cruise frames, and the first author reviewed 171 of the 1904 test frames. A biologist has not confirmed the taxa of the boxes.</li>
+<li>The rare group holds only 45 test boxes, which limits the precision of its average precision. On the rare group GRAFT scored below the default augmentation and the context collage.</li>
+<li>GRAFT produced more false positives on empty test frames than the default augmentation with each detector.</li>
+<li>The quality rules of the instance bank let some poor masks through, such as brittle stars cut out together with sediment.</li>
+<li>On the cameras of cruise B no augmentation scored above the default augmentation. GRAFT was tested only with one-stage YOLO detectors, and all test frames come from three cruises to the western Pacific Ocean.</li>
+<li>Relighting assumes that an animal spans a reflectance range similar to that of the seafloor around it. On a low-contrast seafloor the mapping can fade an animal almost into the background.</li>
+</ul>
+</section>
+
+<section id="repro">
+<h2>Reproduce</h2>
+<p>Full instructions, the data folder layout and the arguments of the compared methods are in the <a href="https://github.com/panzerjagerWang/GRAFT#usage">README</a>. Tested with Python 3.12, PyTorch 2.11 and Ultralytics 8.4.158.</p>
+<pre>pip install -r requirements.txt
+python code/build_bank.py --mix data --fullres &lt;full-resolution folder&gt; --out bank_full --lists oc_train,cruise_trainval
+python code/shrink_bank.py --src bank_full --dst bank          # instance bank at the training scale
+python code/train.py --root data --train cruise_trainval,oc_train --val oc_val \
+  --predict test_cruise,oc_test,cruise_val --model yolo26n --epochs 100 --seed 0 \
+  --project runs/test --name t_GRAFT_s --aug graft \
+  --aug-args '{"bank":"bank","sampling":"scarcity","placement":"uniform","degrade":false,"max_tries":30,"p":0.6,"relight":"local_range"}'
+python code/aggregate.py --root data --runs runs/test --test --out results/my_test_boot0.csv</pre>
+</section>
+
+<section id="citation">
+<h2>Citation</h2>
+<pre>@article{wang2026graft,
+  title  = {{GRAFT}: Detection of Deep-Sea Benthic Megafauna Across Cruises Using Radiometry-Aware Transplantation of Archive Animals},
+  author = {Wang, Jiaqing and Hu, Ruixuan and Qin, Jie and Zhou, Hexiong and Zeng, Zheng},
+  note   = {Manuscript},
+  year   = {2026}
+}</pre>
+<h3>License</h3>
+<p>The code is released under the GNU AGPL-3.0, because it builds on Ultralytics, which is released under the AGPL-3.0. The model weights are provided for research use.</p>
+</section>
+
+</main>
+
+<footer><div class="wrap">GRAFT project page &middot; contact: zhou_hexiong@sjtu.edu.cn, zheng.zeng@sjtu.edu.cn</div></footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('theme');
+try{var t=localStorage.getItem('theme');if(t)r.setAttribute('data-theme',t)}catch(e){}
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>

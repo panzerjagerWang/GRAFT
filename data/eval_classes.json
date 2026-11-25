@@ -1,0 +1,35 @@
+{
+ "rule": "named taxa with at least 20 boxes in the pooled cruise test sets T1-T5 are main classes; the other named taxa form the rare group; otherbio is trained and reported but not averaged",
+ "main": [
+  "fish",
+  "seastar",
+  "brittlestar",
+  "crinoid",
+  "coral",
+  "seapen",
+  "sponge"
+ ],
+ "rare": [
+  "urchin",
+  "cucumber",
+  "anemone",
+  "crustacean",
+  "worm"
+ ],
+ "test_counts": {
+  "fish": 27,
+  "seastar": 34,
+  "brittlestar": 53,
+  "urchin": 8,
+  "cucumber": 5,
+  "crinoid": 64,
+  "coral": 369,
+  "anemone": 13,
+  "seapen": 157,
+  "sponge": 361,
+  "crustacean": 8,
+  "worm": 11,
+  "otherbio": 92,
+  "bio_tbd": 68
+ }
+}
