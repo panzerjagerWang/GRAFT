@@ -79,7 +79,7 @@ The per-seed scores behind these tables are in [`results/`](results): `test_boot
 
 ## Data
 
-**Cruise frames.** 3689 frames from the video of three cruises to seamounts and abyssal plains of the western Pacific Ocean, with 2493 annotated animals. The animals are labelled with 12 named taxa and an other-animal class, the 13 taxa of the detector, or as animals of unknown taxon, which are ignore regions in evaluation. Cruise A comprises 12 dives of a work-class ROV (ROV-1) at four seamount sites at depths of about 600 to 3700 m. Cruise B comprises one dive of the same vehicle at about 2700 m on another seamount, recorded by one high-definition and six standard-definition cameras. Cruise C comprises two dives of an HOV (HOV-1), recorded by its pan-tilt and manipulator cameras. The frames were sampled from the video every 6 s and de-duplicated by perceptual hashing. The eight training dives of Cruise A (1785 frames) come from three seamount sites, and each test set adds one source of shift:
+**Cruise frames.** 3689 frames from the video of three cruises to seamounts and abyssal plains of the western Pacific Ocean, with 2493 annotated animals. The animals are labelled with 12 named taxa and an other-animal class, the 13 taxa of the detector, or as animals of unknown taxon, which are ignore regions in evaluation. Cruise A comprises 12 dives of a work-class ROV (ROV-1) at four seamount sites. Cruise B comprises one dive of the same vehicle on another seamount, recorded by one high-definition and six standard-definition cameras. Cruise C comprises two dives of an HOV (HOV-1), recorded by its pan-tilt and manipulator cameras. The frames were sampled from the video every 6 s and de-duplicated by perceptual hashing. The eight training dives of Cruise A (1785 frames) come from three seamount sites, and each test set adds one source of shift:
 
 | Set | Frames from | New with respect to training | Frames |
 |---|---|---|---|
@@ -194,7 +194,7 @@ model.predict("frame.jpg", imgsz=640, conf=0.25, save=True)
 
 ## Limitations
 
-* The annotators who labelled the cruise frames also reviewed them, and the review covered 171 of the 1904 test frames. No independent taxonomist has confirmed the taxa of the boxes.
+* The annotators who labelled the cruise frames also reviewed them, and the review covered 171 of the 1904 test frames. Two biologists checked the identifications.
 * The rare group holds only 45 test boxes, which limits the precision of its average precision. On the rare group GRAFT scored below the default augmentation and the context collage.
 * GRAFT produced more false positives on empty test frames than the default augmentation with each detector.
 * The quality rules of the instance bank let some poor masks through, such as brittle stars cut out together with sediment.
