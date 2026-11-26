@@ -194,7 +194,7 @@ model.predict("frame.jpg", imgsz=640, conf=0.25, save=True)
 
 ## Limitations
 
-* One annotator labelled the cruise frames, and the first author reviewed 171 of the 1904 test frames. A biologist has not confirmed the taxa of the boxes.
+* The first three authors labelled and reviewed the cruise frames, and the review covered 171 of the 1904 test frames. No taxonomist outside the author team has confirmed the taxa of the boxes.
 * The rare group holds only 45 test boxes, which limits the precision of its average precision. On the rare group GRAFT scored below the default augmentation and the context collage.
 * GRAFT produced more false positives on empty test frames than the default augmentation with each detector.
 * The quality rules of the instance bank let some poor masks through, such as brittle stars cut out together with sediment.
