@@ -3,9 +3,9 @@
 Code, data lists, results and model weights for the paper
 
 > **GRAFT: Detection of Deep-Sea Benthic Megafauna Across Cruises Using Radiometry-Aware Transplantation of Archive Animals**
-> Jiaqing Wang, Ruixuan Hu, Jie Qin, Hexiong Zhou\*, Zheng Zeng\*
-> State Key Laboratory of Submarine Geoscience; Key Laboratory of Polar Ecosystem and Climate Change, Ministry of Education; and School of Oceanography, Shanghai Jiao Tong University
-> \*Corresponding authors
+> Jiaqing Wang†, Ruixuan Hu†, Jie Qin†, Hexiong Zhou\*, Zheng Zeng\*
+> State Key Laboratory of Submarine Geoscience; Key Laboratory of Polar Ecosystem and Climate Change, Ministry of Education; Shanghai Key Laboratory of Polar Life and Environment Sciences; and School of Oceanography, Shanghai Jiao Tong University, Shanghai, China
+> †Equal contribution &nbsp; \*Corresponding authors
 
 **Project page:** https://panzerjagerwang.github.io/GRAFT/ &nbsp;·&nbsp; **Supplementary material:** [`docs/supplementary.pdf`](docs/supplementary.pdf) &nbsp;·&nbsp; **Weights:** [`weights/graft_yolo26n_seed0.pt`](weights/graft_yolo26n_seed0.pt)
 
